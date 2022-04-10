@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap" rel="stylesheet">
+  <title>WanderLust</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<section class="hero is-primary is-large">
+  <div class="wrapper">
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/"><span class="tag is-large is-black"><strong> WanderLust</strong></span></a>
+        </div>
+        {{#if loggedIn}}
+        <div id="logged-in-nav" class="navbar-menu is-active">
+          <div class="navbar-start">
+
+
+            <a class="navbar-item" href="/dashboard"><span
+                class="tag is-large is-dark"><strong>Dashboard</strong></span></a>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="navbar-item" id="logout"><span class="tag is-large is-dark"><strong>Log
+                      Out</strong></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{else}}
+        <div id="logged-out-nav" class="navbar-menu is-active">
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="navbar-item" href="/login"><span
+                    class="tag is-large is-dark"><strong>Login</strong></span></a>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+      </nav>
+    </header>
+
+
+    <body>
+      <main class="has-background-primary-light">
+        {{{ body }}}
+      </main>
+    </body>
+
+    <footer class="has-background-primary">
+      Get Inspired &copy; 2022 WanderLust
+    </footer>
+
+  </div>
+</section>
+
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+
+
+</html>
